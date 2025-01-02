@@ -49,10 +49,17 @@ const AirQualityScreen = () => {
           style={{
             width: 100,
             height: 100,
-            alignSelf: "flex-end",
+            alignSelf: "center",
           }}
         />
       </View>
+       {/* Back Button */}
+              <TouchableOpacity
+                onPress={() => router.push("ChatRoom")}
+                style={styles.chatroomButton}
+              >
+                <Text style={styles.chatroomButtonText}>{"Ask AirSense AI"}</Text>
+              </TouchableOpacity>
 
       {/* Air Quality Overview */}
       <View style={styles.overview}>
@@ -144,7 +151,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 16,
+    padding: 26,
     backgroundColor: '#ffffff',
   },
   locationContainer: {
@@ -299,10 +306,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 10,
   },
+  chatroomButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 10,
+  },
   backButtonText: {
     fontSize: 26,
     fontWeight: 'bold',
     color: '#2d3144',
+  },
+  chatroomButtonText: {
+    fontSize: 26,
+    fontWeight: 'bold',
+    color: 'white',
   },
 });
 

@@ -54,7 +54,7 @@ export default function GetStarted() {
             marginTop: 20,
             cursor: "pointer",
           }}
-          onPress={() => router.push("ChatRoom")}
+          onPress={() => router.push("Dashboard")}
         >
           <Text
             style={{

@@ -1,0 +1,46 @@
+// import React, { useEffect, useState } from 'react';
+// import { View, Text } from 'react-native';
+// import { Client, Message } from 'react-native-paho-mqtt';
+
+// const App = () => {
+//   const [sensorData, setSensorData] = useState(null);
+
+//   useEffect(() => {
+//     // MQTT settings
+//     const client = new Client({
+//       uri: 'ws://<raspberry-pi-ip>:9001', // Use ws://<ip>:port for WebSocket
+//       clientId: 'react_native_app',
+//       storage: localStorage, // Use asyncStorage if needed
+//     });
+
+//     // Connect the client
+//     client.connect()
+//       .then(() => {
+//         console.log('Connected to MQTT broker');
+//         return client.subscribe('sensor/temperature');
+//       })
+//       .then(() => {
+//         client.on('messageReceived', (message) => {
+//           console.log('Message received:', message.payloadString);
+//           setSensorData(JSON.parse(message.payloadString));
+//         });
+//       })
+//       .catch((err) => {
+//         console.error('Connection error:', err);
+//       });
+
+//     // Cleanup
+//     return () => {
+//       client.disconnect();
+//     };
+//   }, []);
+
+//   return (
+//     <View>
+//       <Text>Sensor Data:</Text>
+//       {sensorData ? <Text>{JSON.stringify(sensorData)}</Text> : <Text>Loading...</Text>}
+//     </View>
+//   );
+// };
+
+// export default App;

@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   Alert,
   Keyboard,
-  Image, // Import Image
+  Image,
 } from "react-native";
 import React, { useEffect, useRef, useState } from "react";
 import { useLocalSearchParams, useRouter } from "expo-router";
@@ -104,7 +104,6 @@ export default function ChatRoom() {
     }, 100);
   };
 
-  // Ensure `return` is inside the `ChatRoom` function
   return (
     <CustomKeyBoardView inChat={true}>
       <View
@@ -115,6 +114,14 @@ export default function ChatRoom() {
       >
         <StatusBar style="dark" />
 
+        {/* Back Button */}
+        <TouchableOpacity
+          onPress={() => router.push("Dashboard")}
+          style={styles.backButton}
+        >
+          <Text style={styles.backButtonText}>{"< Back"}</Text>
+        </TouchableOpacity>
+
         {/* Added Image */}
         <Image
           source={require("./../assets/images/AirSenseLogo.png")}
@@ -122,6 +129,7 @@ export default function ChatRoom() {
             width: 300,
             height: 300,
             alignSelf: "center",
+            padding: 36,
           }}
         />
 
@@ -170,11 +178,13 @@ export default function ChatRoom() {
                 ref={inputRef}
                 onChangeText={(value) => (textRef.current = value)}
                 placeholder="Ask AirSense AI..."
+                placeholderTextColor="#2d3144"
                 style={{
                   flex: 1,
                   fontSize: hp(3),
                   fontFamily: "outfit-medium",
                   marginRight: 10,
+                  color: "#2d3144",
                 }}
               />
               <TouchableOpacity
@@ -195,3 +205,18 @@ export default function ChatRoom() {
     </CustomKeyBoardView>
   );
 }
+
+const styles = {
+  backButton: {
+    position: "absolute",
+    top: 40,
+    left: 10,
+    padding: 10,
+    backgroundColor: "#fff",
+    borderRadius: 5,
+  },
+  backButtonText: {
+    fontSize: 16,
+    color: "#2d3144",
+  },
+};
