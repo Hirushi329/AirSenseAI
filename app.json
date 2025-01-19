@@ -13,13 +13,24 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "newArchEnabled": true,
+      "infoPlist": {
+        "NSSpeechRecognitionUsageDescription": "This app needs access to speech recognition for converting speech to text.",
+        "NSMicrophoneUsageDescription": "This app needs access to the microphone to record your voice."
+      },
+      "bundleIdentifier": "AirSenseiOS"
     },
     "android": {
+      "newArchEnabled": true,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.hirushiekanayake.Air_Sense"
     },
     "web": {
       "bundler": "metro",
@@ -37,6 +48,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "9e8bd879-bf25-4616-bea5-081952de2493"
+      }
     }
   }
 }
