@@ -1,2 +1,2 @@
 # AirSenseAI
-An AI powered air quality monitoring and prediction platform
+AirSense is an AI Powered IoT System for Air Quality Monitoring and Prediction, leveraging cutting-edge IoT and machine learning techniques. The system integrates a Raspberry Pi equipped with an SDS011 sensor to measure particulate matter (PM2.5 and PM10), a React Native mobile application for real-time data visualization, and Python APIs that enable Gemini features for seamless connectivity and advanced analytics. Machine learning algorithms are employed to predict air quality trends, offering actionable insights for proactive decision-making.
